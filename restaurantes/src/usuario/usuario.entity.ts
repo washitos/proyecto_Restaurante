@@ -9,7 +9,7 @@ export class UsuarioEntity {
         comment: 'Identificador de la tabla usuario',
     })
     id: number;
-
+//commit test
     @Index({
         unique: false,
     })

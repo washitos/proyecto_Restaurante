@@ -11,6 +11,9 @@ export class UsuarioService {
     ) {
     }
 
-
+    crearUsuario(usuario: UsuarioEntity) {
+        return this._repositorioUsuario
+            .save(usuario);
+    }
 
 }

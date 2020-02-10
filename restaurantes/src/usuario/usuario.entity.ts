@@ -1,6 +1,6 @@
 import {Column, Entity, Index, OneToMany, PrimaryGeneratedColumn} from 'typeorm';
 
-@Entity('usuario_web')
+@Entity('usuario')
 export class UsuarioEntity {
     @PrimaryGeneratedColumn({
         type: 'int',
@@ -55,7 +55,7 @@ export class UsuarioEntity {
     fechaNacimiento?: string;
 
     @Index({
-        unique: false,
+        unique: true,
     })
     @Column({
         type: 'varchar',
@@ -74,10 +74,10 @@ export class UsuarioEntity {
         name: 'cedula',
         comment: 'Cedula de la tabla usuario',
     })
-    cedula: string;
+    cedula?: string;
 
     @Index({
-        unique: true,
+        unique: false,
     })
     @Column({
         type: 'varchar',
@@ -85,10 +85,10 @@ export class UsuarioEntity {
         name: 'direccionDomicilio',
         comment: 'Direccion de domicilio de la tabla usuario',
     })
-    direccionDomicilio: string;
+    direccionDomicilio?: string;
 
     @Index({
-        unique: true,
+        unique: false,
     })
     @Column({
         type: 'varchar',
@@ -96,6 +96,6 @@ export class UsuarioEntity {
         name: 'codigoPostal',
         comment: 'Codigo Postal de la tabla usuario',
     })
-    codigoPostal: string;
+    codigoPostal?: string;
 
 }

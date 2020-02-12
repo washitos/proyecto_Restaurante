@@ -8,9 +8,8 @@ import {UsuarioController} from "./usuario.controller";
     imports: [
         TypeOrmModule
             .forFeature(
-                [
-                    UsuarioEntity
-                ],
+                [ UsuarioEntity,
+                     ],
                 'default'
             )
     ],

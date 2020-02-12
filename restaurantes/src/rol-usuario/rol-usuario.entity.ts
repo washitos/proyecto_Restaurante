@@ -14,28 +14,6 @@ export class RolUsuarioEntity {
     })
     id: number;
 
-    @Index({
-        unique: false,
-    })
-    @Column({
-        type: 'varchar',
-        nullable: true,
-        name: 'nombreUsuario',
-        comment: 'Nombre de la tabla usuario',
-    })
-    nombreUsuario?: string;
-
-    @Index({
-        unique: false,
-    })
-    @Column({
-        type: 'varchar',
-        nullable: true,
-        name: 'nombreRol',
-        comment: 'Nombre de la tabla usuario',
-    })
-    nombreRol?: string;
-
     @ManyToOne(
         type => UsuarioEntity, // Entidad
         usuario => usuario.rolUsuario, // El campo de la relacion

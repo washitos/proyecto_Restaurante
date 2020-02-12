@@ -1,5 +1,6 @@
 import {Column, Entity, Index, OneToMany, PrimaryGeneratedColumn} from 'typeorm';
 import {RolUsuarioEntity} from "../rol-usuario/rol-usuario.entity";
+import {FacturaEntity} from "../factura/factura.entity";
 
 @Entity('usuario')
 export class UsuarioEntity {
@@ -104,5 +105,11 @@ export class UsuarioEntity {
         rolUsuario => rolUsuario.usuario, // Nombre del campo
     )
     rolUsuario: RolUsuarioEntity[];
+
+    @OneToMany(
+        type => FacturaEntity, // Entidad
+        factura => factura.usuario, // Nombre del campo
+    )
+    factura: FacturaEntity[];
 
 }

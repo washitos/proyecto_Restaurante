@@ -1,4 +1,5 @@
 import {Column, Entity, Index, OneToMany, PrimaryGeneratedColumn} from 'typeorm';
+import {RolUsuarioEntity} from "../rol-usuario/rol-usuario.entity";
 
 @Entity('usuario')
 export class UsuarioEntity {
@@ -97,5 +98,11 @@ export class UsuarioEntity {
         comment: 'Codigo Postal de la tabla usuario',
     })
     codigoPostal?: string;
+
+    @OneToMany(
+        type => RolUsuarioEntity, // Entidad
+        rolUsuario => rolUsuario.usuario, // Nombre del campo
+    )
+    rolUsuario: RolUsuarioEntity[];
 
 }

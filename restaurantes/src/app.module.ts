@@ -9,9 +9,18 @@ import {DetalleModule} from "./detalle/detalle.module";
 import {FacturaModule} from "./factura/factura.module";
 import {PlatoModule} from "./plato/plato.module";
 import {RestauranteModule} from "./restaurante/restaurante.module";
+import {RouterModule, Routes} from "nest-router";
+
+const routes: Routes = [
+  {
+    path: '/usuario',
+    module: UsuarioModule
+  },
+];
 
 @Module({
   imports: [
+      RouterModule.forRoutes(routes),
     TypeOrmModule.forRoot(),
     UsuarioModule,
     RolUsuarioModule,
@@ -25,4 +34,10 @@ import {RestauranteModule} from "./restaurante/restaurante.module";
   controllers: [AppController],
   providers: [AppService],
 })
-export class AppModule {}
+export class AppModule {
+
+  //ANADIR LOS CONSTRUCTORES
+
+}
+
+
